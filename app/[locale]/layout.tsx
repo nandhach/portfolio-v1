@@ -26,14 +26,14 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "Profile" });
   return {
     metadataBase: new URL(SITE_URL),
-    title: `${METADATA.creator} | Software Engineer`,
+    title: `${METADATA.creator} | Software Developer`,
     description: t("description"),
     keywords: METADATA.keyword,
     creator: METADATA.creator,
     authors: METADATA.authors,
     icons: { icon: "/icon.svg", shortcut: "/icon.svg", apple: "/icon.svg" },
     openGraph: {
-      title: `${METADATA.creator} | Software Engineer`,
+      title: `${METADATA.creator} | Software Developer`,
       description: t("description"),
       url: `/${locale}`,
       siteName: METADATA.openGraph.siteName,

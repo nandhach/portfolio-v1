@@ -2,9 +2,9 @@
   "HomePage": {
     "intro": "Halo, saya Muhammad Nandha Chrismawan",
     "location": "Berdomisili di Surabaya, Indonesia",
-    "location_type": "Software Engineer",
+    "location_type": "Software Developer",
     "resume": {
-      "paragraph_1": "Saya Software Engineer dan lulusan baru PENS yang berfokus pada aplikasi web. Pengalaman saya mencakup magang frontend, proyek freelance, tugas akhir individual, serta proyek belajar personal menggunakan React, Next.js, JavaScript, dan TypeScript.",
+      "paragraph_1": "Saya Software Developer dan lulusan baru PENS yang berfokus pada aplikasi web. Pengalaman saya mencakup magang frontend, proyek freelance, tugas akhir individual, serta proyek belajar personal menggunakan React, Next.js, JavaScript, dan TypeScript.",
       "paragraph_2": "Saya mengerjakan antarmuka, integrasi API, dan arsitektur frontend: dari platform ujian yang digunakan klien hingga perangkat lunak manajemen armada modular dan aplikasi real-time yang diuji lokal. Saya mengutamakan batas yang jelas antara UI, akses data, dan logika aplikasi bersama."
     },
     "skills": {
@@ -22,10 +22,10 @@
     "title": "Tentang",
     "description": "Pengenalan singkat mengenai siapa saya.",
     "resume": {
-      "paragraph_1": "Saya Muhammad Nandha Chrismawan, Software Engineer yang berdomisili di Surabaya, Indonesia. Saya lulus dari program D4 Teknik Informatika di Politeknik Elektronika Negeri Surabaya (PENS) pada 24 Juli 2026.",
+      "paragraph_1": "Saya Muhammad Nandha Chrismawan, Software Developer yang berdomisili di Surabaya, Indonesia. Saya lulus dari program D4 Teknik Informatika di Politeknik Elektronika Negeri Surabaya (PENS) pada 24 Juli 2026.",
       "paragraph_2": "Saat magang frontend di PT. Mitra Informatika dan PT. Piramida Teknologi Informasi, saya mengerjakan UX autentikasi, design token, media browser, integrasi API typed, serta antarmuka web real-time. Tanggung jawab saya terpisah dari pekerjaan backend, mobile, dan protokol komunikasi milik rekan tim.",
       "paragraph_3": "Sebagai frontend developer freelance untuk Spectra, saya membangun antarmuka peserta dan administrator pada platform ujian yang di-deploy serta digunakan pada dua event tahunan. Untuk tugas akhir individual, saya mengembangkan frontend manajemen armada modular dengan development terfederasi, satu bundle host produksi, batas API bersama, dan dukungan PWA untuk koneksi terbatas.",
-      "paragraph_4": "Proyek-proyek tersebut membentuk ketertarikan saya pada struktur aplikasi, alur data, dan batas integrasi yang jelas. Saya ingin berkontribusi dalam tim web dan software engineering sambil terus memperdalam kemampuan tersebut."
+      "paragraph_4": "Proyek-proyek tersebut membentuk ketertarikan saya pada struktur aplikasi, alur data, dan batas integrasi yang jelas. Saya ingin berkontribusi dalam tim web dan Software Developering sambil terus memperdalam kemampuan tersebut."
     },
     "career": {
       "title": "Pengalaman",
@@ -209,7 +209,7 @@
   },
   "ContactPage": {
     "title": "Kontak",
-    "description": "Hubungi saya untuk peluang software engineering dan kolaborasi.",
+    "description": "Hubungi saya untuk peluang Software Developering dan kolaborasi.",
     "intro": "Saya berdomisili di Surabaya, Indonesia. Untuk peluang kerja, diskusi proyek, atau pertanyaan tentang kontribusi saya, hubungi melalui email atau LinkedIn. Repositori publik saya tersedia di GitHub.",
     "error": "Gagal mengirim pesan.",
     "no_data": "Informasi kontak tidak tersedia.",
@@ -259,7 +259,7 @@
     "copyright_2": "Muhammad Nandha Chrismawan. Seluruh hak cipta dilindungi undang-undang."
   },
   "Profile": {
-    "description": "Muhammad Nandha Chrismawan — Software Engineer yang berdomisili di Surabaya, Indonesia. Jelajahi profil, proyek, dan pencapaian saya.",
+    "description": "Muhammad Nandha Chrismawan — Software Developer yang berdomisili di Surabaya, Indonesia. Jelajahi profil, proyek, dan pencapaian saya.",
     "email": "Email",
     "contact_links": "Tautan kontak",
     "open_menu": "Buka navigasi",

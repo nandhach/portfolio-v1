@@ -1,207 +1,142 @@
-  <h1>satriabahari.my.id</h1>
-  <p>🔥 Personal website was built originally from scratch using Next.js, TypeScript, Tailwind CSS, SWR, Supabase and more.</p> 
+# Muhammad Nandha Chrismawan
 
-[![GitHub Repo stars](https://img.shields.io/github/stars/satriabahari/satria.com)](https://github.com/satriabahari/satria.com/stargazers)
-[![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/status.svg)](https://depfu.com)
-[![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/overview.svg)](https://depfu.com/github/satriabahari/satria.com?project_id=38809)
-[![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/count.svg)](https://depfu.com/github/satriabahari/satria.com?project_id=38809)
-[![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
+**Software Developer · Surabaya, Indonesia**
 
-<br/>
+My personal portfolio: a place to explain the software I build, the work I
+contribute to, and the experience behind it. I focus on web interfaces, API
+integration, and frontend application architecture.
 
-<img width="1525" height="1221" alt="Screenshot 2025-08-07 115929" src="https://github.com/user-attachments/assets/fcf5a30b-0ad8-4a57-b1bf-e846e4ed416c" />
+[GitHub](https://github.com/nandhach/) ·
+[LinkedIn](https://www.linkedin.com/in/nandhachrismawan/) ·
+[Email](mailto:nandhachrismawan@gmail.com)
 
-## 📘 Introduction
+## Inside the portfolio
 
-This is my personal website built from scratch since February 2024 using modern technologies such as Next.js and TypeScript.
+- **Home** — introduction and selected technologies.
+- **About** — PENS education, frontend internships, and freelance experience.
+- **Projects** — five bilingual case studies with explicit responsibilities,
+  implementation decisions, outcomes, and delivery limitations.
+- **Achievements** — certifications, internship recognition, copyright records,
+  and an IES exhibition certificate, with searchable tags and certificate dialogs.
+- **Contact** — direct email, GitHub, and LinkedIn links.
 
-I use this platform to share projects, insights, and resources. The site is constantly evolving as I add more features and improvements.
+English and Indonesian are available under `/en` and `/id`; English is the default.
+The layout supports light/dark themes, desktop navigation, and a mobile menu.
 
-Feel free to explore the source code, use it as inspiration, or fork it as a template under the provided license. If you find this project useful, consider giving it a star ⭐.
+### Selected work
 
-Have feedback, ideas, or questions? Don’t hesitate to reach out! 🙌
+| Project                       | Context                                                                                                                                          |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| FMS — Fleet Management System | Individual final-project frontend; modular architecture, shared API integration, SSE, limited-connectivity PWA. Internal academic demonstration. |
+| Spectra                       | Sole frontend developer in a two-person freelance team; deployed assessment platform used at two annual events.                                  |
+| Ride-hailing                  | Web frontend in a four-person internship team; REST, maps, and Socket.IO. Local internal-testing MVP.                                            |
+| NKRI                          | Internship contributions to an internal communication prototype: design tokens, authentication UX, browser media, and conversation management.   |
+| Chat App                      | Individual learning project using Convex and Clerk/Svix; local-only.                                                                             |
 
----
+Case studies distinguish my contributions from backend, mobile, and other team
+members' work. Project technology lists describe implementation, not a blanket
+claim of proficiency in every technology.
 
-## Tech Stack
+## Implementation
 
-This website is built using these technologies:
+- Next.js **14.1**, App Router; React **18**; TypeScript.
+- Tailwind CSS **v3**, Framer Motion, React Icons.
+- `next-intl` for locale-aware routes and interface copy.
+- Local TypeScript data and Markdown for portfolio content.
+- ESLint and Prettier for source consistency.
 
-- **⚛️ Next.js**
-- **🔰 TypeScript**
-- **💠 Tailwind CSS v3**
-- **🦫 Zustand**
-- **〰️ SWR**
-- **➰ Framer Motion**
-- **💢 React Icons**
-- **🌐 Next-Intl (i18n)**
-- **📦 Absolute Imports & Path Alias**
-- **📏 ESLint & Prettier**
-- **📌 Conventional Commit Lint**
+Core content does not require a database or CMS. Projects and achievements are
+read through local services, also used by their API endpoints. Project detail
+Markdown is loaded by locale and stable slug.
 
----
-
-## 🚀 Features
-
-### 🕗 Wakatime Statistics
-Displays live coding statistics from Wakatime using serverless API routes in Next.js.
-
-### 🗳 Project Showcase
-Projects are stored in a Supabase PostgreSQL database. Uses ISR (1s revalidation) and SSR for optimal performance.
-
-### 🌍 Internationalization
-Supports multiple languages using `next-intl`. Easily extendable to support additional locales.
-
-### 📊 Developer Dashboard
-Interactive dashboard visualizing:
-- GitHub contributions
-- Wakatime data
-- Codewars stats
-- Monkeytype typing stats
-
-Each stat is retrieved using public APIs and visualized in a user-friendly way.
-
----
-
-## 🛠 Getting Started
-
-Follow these steps to run the project locally:
-
-### 1. Clone the Repository
-
-Using Git:
-```bash
-git clone https://github.com/satriabahari/satriabahari.my.id
+```text
+app/[locale]/           Pages, page metadata, shared locale layout
+app/api/                API routes
+common/constants/       Profile, skills, experience, education, navigation
+common/components/      Shared layout and UI elements
+common/types/           Content contracts
+contents/               Projects, achievements, bilingual case studies
+messages/               English and Indonesian interface copy
+modules/                Feature components
+services/               Local content services and retained integrations
+public/images/          Avatar, neutral covers, logos, certificates
+docs/                   Editing, visual, asset, and setup guides
 ```
 
-Using `create-next-app`:
-```bash
-npx create-next-app -e https://github.com/satriabahari/satriabahari.my.id project-name
+## Local development
+
+Use Node.js compatible with Next.js 14 (minimum **18.17**) and npm. Use a currently
+supported Node.js release for your environment. The repository contains both
+`package-lock.json` and `bun.lockb`; the documented workflow uses npm.
+
+1. Clone `https://github.com/nandhach/portfolio-v1.git`, then open that folder.
+2. Install the locked dependencies:
+
+   ```sh
+   npm ci
+   ```
+
+3. Copy `.env.example` to `.env.local` if you need explicit domain configuration.
+   The core portfolio works with the localhost metadata fallback.
+4. To preview manually on your machine:
+
+   ```sh
+   npm run dev
+   ```
+
+5. Open `http://localhost:3000/en` or `http://localhost:3000/id`.
+
+The preview commands are for the maintainer. Agent verification in this repository
+uses source checks and builds; it does not launch a local server or browser.
+
+### Checks
+
+```sh
+npm run lint
+npx --no-install tsc --noEmit
+npm run build
+git diff --check
 ```
 
-Using `degit`:
-```bash
-npx degit satriabahari/satriabahari.my.id YOUR_APP_NAME
-```
+There is no automated test script. Visual and interaction checks are performed
+manually. Detailed setup, optional integrations, and known build messages are
+documented in [Setup & troubleshooting](docs/SETUP.md).
 
-Or deploy directly to Vercel / Netlify:
+## Editing this portfolio
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/satriabahari/satriabahari.my.id)  
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/satriabahari/satriabahari.my.id)
+The following guides are written in Indonesian for day-to-day maintenance:
 
----
+- [Content management](docs/CONTENT_MANAGEMENT.md) — exact files, field contracts,
+  complete editing recipes, bilingual content, adding and hiding entries.
+- [Micro visual customization](docs/VISUAL_CUSTOMIZATION.md) — spacing, type,
+  colors, responsive layout, card anatomy, dialogs, hover/focus, motion.
+- [Asset guide](docs/ASSET_GUIDE.md) — image preparation, SVG covers, logo mapping,
+  certificates, optional PDFs, filename encoding.
+- [Setup & troubleshooting](docs/SETUP.md) — environment variables, commands,
+  diagnostics, manual verification.
 
-### 2. Install Dependencies
+Start with `common/constants/profile.ts` for identity and skills,
+`contents/projects.ts` for project cards, `contents/achievements.ts` for
+achievements, and `messages/{en,id}.json` for translated copy.
 
-```bash
-bun install
-```
+## Retained integrations
 
-> ⚠️ It's recommended to use **Bun** to ensure husky hooks and scripts work properly.
+Contents, Dashboard, Chat, and Smart Talk are hidden from the primary navigation.
+Their routes, modules, APIs, and dependencies remain in the codebase. Hiding a
+menu item does not disable its URL. Some retained features require their own
+credentials and still contain inherited configuration; they are not prerequisites
+for editing the five main portfolio pages. Contact currently uses direct links,
+not the retained email form endpoint.
 
----
+## Credits and reuse
 
-### 3. Configure Environment Variables
+The initial UI foundation was adapted from
+[Satria Bahari's portfolio](https://github.com/satriabahari/satriabahari.my.id).
+This repository personalizes that foundation for my identity, bilingual content,
+local content model, case studies, and achievement presentation.
 
-Copy `.env.example` to `.env` and replace with your own credentials.
-
-```bash
-cp .env.example .env
-```
-
-You’ll need credentials for services like:
-- Nodemailer
-- GitHub
-- Wakatime
-- Codewars
-- Monkeytype
-- Supabase/PostgreSQL
-
-#### Example:
-
-```
-# Nodemailer
-NODEMAILER_PW=your_email_password
-NODEMAILER_EMAIL=your_email@example.com
-
-# GitHub Token
-GITHUB_READ_USER_TOKEN_PERSONAL=your_github_token
-
-# Umami Analytics
-UMAMI_API_KEY=your_umami_api_key
-UMAMI_WEBSITE_ID_SITE=your_site_id
-UMAMI_WEBSITE_ID_MYID=your_myid_id
-
-# Wakatime
-WAKATIME_API_ID=your_wakatime_id
-WAKATIME_API_KEY=your_wakatime_key
-
-# Monkeytype
-MONKEYTYPE_API_KEY=your_monkeytype_api_key
-
-# Codewars
-CODEWARS_USER_ID=your_codewars_username
-
-# PostgreSQL (Supabase)
-POSTGRES_URL=your_postgres_url
-POSTGRES_PRISMA_URL=your_prisma_url
-POSTGRES_URL_NO_SSL=your_postgres_url_no_ssl
-POSTGRES_URL_NON_POOLING=your_postgres_url_non_pooling
-POSTGRES_USER=your_postgres_user
-POSTGRES_HOST=your_postgres_host
-POSTGRES_PASSWORD=your_postgres_password
-POSTGRES_DATABASE=your_postgres_db
-
-# Google Auth
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-
-# Gemini API
-GEMINI_API_KEY=your_gemini_api_key
-
-# GitHub Auth
-GITHUB_ID=your_github_app_id
-GITHUB_SECRET=your_github_app_secret
-
-# NextAuth
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=your_nextauth_secret
-
-# Firebase
-NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_firebase_project_id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
-NEXT_PUBLIC_FIREBASE_APP_ID=your_firebase_app_id
-NEXT_PUBLIC_FIREBASE_DB_URL=your_firebase_db_url
-NEXT_PUBLIC_FIREBASE_CHAT_DB=messages
-
-# Supabase
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-
-# Misc
-NEXT_PUBLIC_AUTHOR_EMAIL=your_email@example.com
-DOMAIN=https://www.yourdomain.com
-
-```
-
----
-
-### 4. Run Development Server
-
-```bash
-bun run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-You can start editing the homepage in:  
-`src/pages/index.tsx`
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
+The inherited README stated an MIT license; no `LICENSE` file is currently
+included in this checkout. Preserve applicable upstream notices and confirm the
+license terms before redistributing the code. Personal certificates, logos,
+photographs, and project materials are not automatically covered by a software
+license.

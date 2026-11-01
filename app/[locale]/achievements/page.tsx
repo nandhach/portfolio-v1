@@ -30,7 +30,7 @@ export async function generateMetadata({
   return {
     title: `${t("title")} ${METADATA.exTitle}`,
     description: t("description"),
-    keywords: `software engineer achievements, certificates, ${METADATA.creator}`,
+    keywords: `software developer achievements, certificates, ${METADATA.creator}`,
     alternates: {
       canonical: `/${locale}/achievements`,
     },

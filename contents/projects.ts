@@ -5,6 +5,7 @@ export const projects: LocalProject[] = [
   {
     id: 1,
     slug: "fms",
+    image: "/images/projects/fms.svg",
     order: 1,
     is_show: true,
     is_featured: true,
@@ -33,6 +34,7 @@ export const projects: LocalProject[] = [
   {
     id: 2,
     slug: "spectra",
+    image: "/images/projects/spectra.svg",
     order: 2,
     is_show: true,
     is_featured: true,
@@ -53,6 +55,7 @@ export const projects: LocalProject[] = [
   {
     id: 3,
     slug: "ride-hailing",
+    image: "/images/projects/ride-hailing.svg",
     order: 3,
     is_show: true,
     is_featured: false,
@@ -81,6 +84,7 @@ export const projects: LocalProject[] = [
   {
     id: 4,
     slug: "nkri",
+    image: "/images/projects/nkri.svg",
     order: 4,
     is_show: true,
     is_featured: false,
@@ -109,6 +113,7 @@ export const projects: LocalProject[] = [
   {
     id: 5,
     slug: "chat-app",
+    image: "/images/projects/chat-app.svg",
     order: 5,
     is_show: true,
     is_featured: false,

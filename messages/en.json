@@ -2,9 +2,9 @@
   "HomePage": {
     "intro": "Hi, I'm Muhammad Nandha Chrismawan",
     "location": "Based in Surabaya, Indonesia",
-    "location_type": "Software Engineer",
+    "location_type": "Software Developer",
     "resume": {
-      "paragraph_1": "I'm a Software Engineer and a fresh graduate of PENS, focused on web applications. My experience spans frontend internships, freelance delivery, an individual final project, and personal learning projects using React, Next.js, JavaScript, and TypeScript.",
+      "paragraph_1": "I'm a Software Developer and a fresh graduate of PENS, focused on web applications. My experience spans frontend internships, freelance delivery, an individual final project, and personal learning projects using React, Next.js, JavaScript, and TypeScript.",
       "paragraph_2": "I work on interfaces, API integration, and frontend architecture: from a client-used assessment platform to modular fleet-management software and locally tested real-time applications. I value clear boundaries between UI, data access, and shared application logic."
     },
     "skills": {
@@ -22,10 +22,10 @@
     "title": "About",
     "description": "A brief introduction to who I am.",
     "resume": {
-      "paragraph_1": "I'm Muhammad Nandha Chrismawan, a Software Engineer based in Surabaya, Indonesia. I graduated from the D4 Informatics Engineering program at Politeknik Elektronika Negeri Surabaya (PENS) on July 24, 2026.",
+      "paragraph_1": "I'm Muhammad Nandha Chrismawan, a Software Developer based in Surabaya, Indonesia. I graduated from the D4 Informatics Engineering program at Politeknik Elektronika Negeri Surabaya (PENS) on July 24, 2026.",
       "paragraph_2": "During frontend internships at PT. Mitra Informatika and PT. Piramida Teknologi Informasi, I worked on authentication UX, design tokens, browser media, typed API integration, and real-time web interfaces. My responsibilities were distinct from teammates' backend, mobile, and communication-protocol work.",
       "paragraph_3": "As a freelance frontend developer for Spectra, I built participant and administrator interfaces for a deployed assessment platform used at two annual events. For my individual final project, I developed a modular fleet-management frontend with federated development, a single production host bundle, shared API boundaries, and limited-connectivity PWA support.",
-      "paragraph_4": "These projects shaped my interest in application structure, data flow, and explicit integration boundaries. I'm looking to contribute to web and software engineering teams while continuing to deepen those skills."
+      "paragraph_4": "These projects shaped my interest in application structure, data flow, and explicit integration boundaries. I'm looking to contribute to web and Software Developering teams while continuing to deepen those skills."
     },
     "career": {
       "title": "Experience",
@@ -209,7 +209,7 @@
   },
   "ContactPage": {
     "title": "Contact",
-    "description": "Contact me about software engineering opportunities and collaboration.",
+    "description": "Contact me about Software Developering opportunities and collaboration.",
     "intro": "I'm based in Surabaya, Indonesia. For work opportunities, project discussions, or questions about my contributions, email me or connect on LinkedIn. My public repositories are available on GitHub.",
     "error": "Failed to send message.",
     "no_data": "No contact information available.",
@@ -259,7 +259,7 @@
     "copyright_2": "Muhammad Nandha Chrismawan. All rights reserved."
   },
   "Profile": {
-    "description": "Muhammad Nandha Chrismawan — Software Engineer based in Surabaya, Indonesia. Explore my profile, projects, and achievements.",
+    "description": "Muhammad Nandha Chrismawan — Software Developer based in Surabaya, Indonesia. Explore my profile, projects, and achievements.",
     "email": "Email",
     "contact_links": "Contact links",
     "open_menu": "Open navigation",

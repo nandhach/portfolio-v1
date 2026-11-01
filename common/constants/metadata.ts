@@ -15,16 +15,16 @@ const getSiteUrl = () => {
 export const SITE_URL = getSiteUrl();
 
 export const METADATA = {
-  creator: PROFILE.name,
+  creator: PROFILE.sName,
   keyword:
-    "Muhammad Nandha Chrismawan, Software Engineer, React, Next.js, TypeScript, Surabaya",
+    "Muhammad Nandha Chrismawan, Software Developer, React, Next.js, TypeScript, Surabaya",
   authors: {
-    name: PROFILE.name,
+    name: PROFILE.sName,
     url: PROFILE.github,
   },
   openGraph: {
     url: SITE_URL,
     siteName: PROFILE.sName,
   },
-  exTitle: `| ${PROFILE.name}`,
+  exTitle: `| ${PROFILE.sName}`,
 };

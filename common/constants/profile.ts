@@ -1,8 +1,8 @@
 export const PROFILE = {
   name: "Muhammad Nandha Chrismawan",
-  sName: "Nandha Chrismawan",
+  sName: "nandhach",
   initials: "NC",
-  headline: "Software Engineer",
+  headline: "Software Developer",
   avatar: "/images/avatar.svg",
   email: "nandhachrismawan@gmail.com",
   github: "https://github.com/nandhach/",
