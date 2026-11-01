@@ -1,0 +1,23 @@
+export const PROFILE = {
+  name: "Muhammad Nandha Chrismawan",
+  sName: "Nandha Chrismawan",
+  initials: "NC",
+  headline: "Software Engineer",
+  avatar: "/images/avatar.svg",
+  email: "nandhachrismawan@gmail.com",
+  github: "https://github.com/nandhach/",
+  linkedin: "https://www.linkedin.com/in/nandhachrismawan/",
+  skills: [
+    "JavaScript",
+    "TypeScript",
+    "React.js",
+    "Next.js",
+    "Webpack",
+    "TailwindCSS",
+    "Bootstrap",
+    "Github",
+    "Npm",
+    "bun",
+    "AI",
+  ],
+} as const;

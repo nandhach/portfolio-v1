@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="NC">
+  <rect width="160" height="160" rx="80" fill="#262626"/>
+  <circle cx="80" cy="80" r="74" fill="none" stroke="#737373" stroke-width="2"/>
+  <text x="80" y="84" fill="#fafafa" font-family="Arial, sans-serif" font-size="58" font-weight="600" text-anchor="middle" dominant-baseline="middle">NC</text>
+</svg>

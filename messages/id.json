@@ -1,0 +1,288 @@
+{
+  "HomePage": {
+    "intro": "Halo, saya Muhammad Nandha Chrismawan",
+    "location": "Berdomisili di Surabaya, Indonesia",
+    "location_type": "Software Engineer",
+    "resume": {
+      "paragraph_1": "Saya Software Engineer dan lulusan baru PENS yang berfokus pada aplikasi web. Pengalaman saya mencakup magang frontend, proyek freelance, tugas akhir individual, serta proyek belajar personal menggunakan React, Next.js, JavaScript, dan TypeScript.",
+      "paragraph_2": "Saya mengerjakan antarmuka, integrasi API, dan arsitektur frontend: dari platform ujian yang digunakan klien hingga perangkat lunak manajemen armada modular dan aplikasi real-time yang diuji lokal. Saya mengutamakan batas yang jelas antara UI, akses data, dan logika aplikasi bersama."
+    },
+    "skills": {
+      "title": "Keahlian",
+      "sub_title": "Teknologi yang saya gunakan dan nyaman saya diskusikan."
+    },
+    "bento": {
+      "title": "Bagian Unggulan",
+      "sub_title": "Jelajahi semua yang telah saya buat, kontribusikan, dan capai."
+    },
+    "error": "Terjadi kesalahan pada server.",
+    "no_data": "Data tidak tersedia."
+  },
+  "AboutPage": {
+    "title": "Tentang",
+    "description": "Pengenalan singkat mengenai siapa saya.",
+    "resume": {
+      "paragraph_1": "Saya Muhammad Nandha Chrismawan, Software Engineer yang berdomisili di Surabaya, Indonesia. Saya lulus dari program D4 Teknik Informatika di Politeknik Elektronika Negeri Surabaya (PENS) pada 24 Juli 2026.",
+      "paragraph_2": "Saat magang frontend di PT. Mitra Informatika dan PT. Piramida Teknologi Informasi, saya mengerjakan UX autentikasi, design token, media browser, integrasi API typed, serta antarmuka web real-time. Tanggung jawab saya terpisah dari pekerjaan backend, mobile, dan protokol komunikasi milik rekan tim.",
+      "paragraph_3": "Sebagai frontend developer freelance untuk Spectra, saya membangun antarmuka peserta dan administrator pada platform ujian yang di-deploy serta digunakan pada dua event tahunan. Untuk tugas akhir individual, saya mengembangkan frontend manajemen armada modular dengan development terfederasi, satu bundle host produksi, batas API bersama, dan dukungan PWA untuk koneksi terbatas.",
+      "paragraph_4": "Proyek-proyek tersebut membentuk ketertarikan saya pada struktur aplikasi, alur data, dan batas integrasi yang jelas. Saya ingin berkontribusi dalam tim web dan software engineering sambil terus memperdalam kemampuan tersebut."
+    },
+    "career": {
+      "title": "Pengalaman",
+      "sub_title": "Kontribusi saat magang dan freelance.",
+      "details": "Kontribusi dan hasil",
+      "show_details": "Tampilkan detail",
+      "hide_details": "Sembunyikan detail",
+      "responsibilities": "Tanggung Jawab",
+      "lessons_learned": "Pembelajaran",
+      "impact": "Dampak",
+      "duration_years": "{count} tahun",
+      "duration_months": "{count} bulan"
+    },
+    "education": {
+      "title": "Pendidikan",
+      "sub_title": "Latar belakang akademik saya.",
+      "graduated": "Lulus pada",
+      "gpa": "IPK"
+    },
+    "resume_download_button": "Unduh Resume",
+    "portfolio_download_button": "Unduh Portofolio",
+    "error": "Terjadi kesalahan pada server.",
+    "no_data": "Data tidak tersedia."
+  },
+  "ContentsPage": {
+    "title": "Konten",
+    "description": "Kumpulan konten coding dan karya kreatif saya.",
+    "open_tiktok": "Buka TikTok",
+    "view": "Lihat",
+    "load_more": "Muat Lebih Banyak",
+    "privacy_policy": "Kebijakan Privasi",
+    "error": "Terjadi kesalahan pada server.",
+    "no_data": "Konten tidak tersedia."
+  },
+  "AchievementsPage": {
+    "title": "Pencapaian",
+    "description": "Sertifikasi, pengakuan magang, pencatatan hak cipta, dan pameran riset.",
+    "error": "Terjadi kesalahan pada server.",
+    "no_data": "Data tidak tersedia.",
+    "show_credential": "Lihat Kredensial",
+    "search": "Cari pencapaian",
+    "type": "Jenis",
+    "category": "Kategori",
+    "all_types": "Semua jenis",
+    "all_categories": "Semua kategori",
+    "unknown_filter": "Filter tidak dikenal",
+    "apply_filters": "Terapkan filter",
+    "reset": "Atur ulang",
+    "total": "Total: {count}",
+    "issued_on": "Diterbitkan pada",
+    "credential_id": "ID Kredensial",
+    "view_certificate": "Lihat sertifikat",
+    "view_details": "Lihat detail",
+    "view_details_for": "Lihat detail: {name}",
+    "close_details": "Tutup detail pencapaian",
+    "certificate_unavailable": "Gambar sertifikat belum tersedia.",
+    "certificate_alt": "Sertifikat: {name}",
+    "types": {
+      "certification": "Sertifikasi",
+      "internship": "Magang",
+      "intellectual-property": "Kekayaan Intelektual",
+      "exhibition": "Pameran"
+    },
+    "categories": {
+      "software-quality": "Kualitas Perangkat Lunak",
+      "internship": "Magang",
+      "toefl": "TOEFL",
+      "language": "Bahasa",
+      "research": "Riset",
+      "software-development": "Pengembangan Perangkat Lunak",
+      "exhibition": "Pameran",
+      "symposium": "Simposium"
+    }
+  },
+  "ProjectsPage": {
+    "title": "Proyek",
+    "description": "Proyek akademik, freelance, magang, dan personal, dengan peran serta status hasil dijelaskan pada tiap studi kasus.",
+    "view_project": "Lihat Proyek",
+    "tech_stack": "Teknologi",
+    "back_button": "Kembali",
+    "source_code_text": "Kode Sumber",
+    "live_demo_text": "Demo Langsung",
+    "featured": "Unggulan",
+    "no_case_study": "Studi kasus ini belum tersedia.",
+    "error": "Terjadi kesalahan pada server.",
+    "no_data": "Proyek tidak tersedia."
+  },
+  "DashboardPage": {
+    "title": "Dasbor",
+    "description": "Dasbor pribadi saya yang dibangun dengan rute API Next.js, memvisualisasikan statistik pengembangan dan kontribusi secara real-time.",
+    "error": "Terjadi kesalahan pada server.",
+    "no_data": "Statistik tidak tersedia.",
+    "umami": {
+      "title": "Umami",
+      "sub_title": "Pantau trafik dan interaksi real-time dari situs portofolio saya.",
+      "overview": {
+        "page_views": "Dilihat",
+        "visitors": "Pengunjung",
+        "visits": "Kunjungan",
+        "countries": "Negara",
+        "events": "Acara"
+      },
+      "chart": {
+        "title": "Tren Trafik",
+        "sessions": "Sesi",
+        "page_views": "Tampilan Halaman"
+      },
+      "all": "Semua",
+      "filter_placeholder": "Filter domain..."
+    },
+    "github": {
+      "title": "Kontribusi GitHub",
+      "sub_title": "Aktivitas GitHub saya selama setahun terakhir.",
+      "title_total_contribution": "Total",
+      "title_total_this_week_contribution": "Minggu ini",
+      "title_best_contribution": "Terbaik",
+      "title_average_contribution": "Rata-rata",
+      "title_less_contribution": "Sedikit",
+      "title_more_contribution": "Banyak",
+      "unit": "hari"
+    },
+    "wakatime": {
+      "title": "Statistik WakaTime",
+      "sub_title": "Aktivitas coding selama 7 hari terakhir.",
+      "last_update": "Pembaruan Terakhir",
+      "start_date": "Tanggal Mulai",
+      "end_date": "Tanggal Selesai",
+      "daily_average": "Rata-rata Waktu Coding Harian",
+      "total_this_week": "Total Minggu Ini",
+      "best_day": "Hari Terbaik",
+      "all_time_since_joined": "Total Coding Sejak Bergabung",
+      "languages": "Bahasa Teratas"
+    },
+    "codewars": {
+      "title": "Progres Codewars",
+      "sub_title": "Metrik performa dari tantangan Codewars.",
+      "title_rank": "Peringkat",
+      "title_honor": "Kehormatan",
+      "title_completed": "Tantangan Selesai",
+      "title_leaderboard": "Papan Peringkat Global",
+      "title_clan": "Klan",
+      "title_skills": "Keahlian Terkait"
+    },
+    "monkeytype": {
+      "title": "Statistik Monkeytype",
+      "sub_title": "Statistik dan performa mengetik.",
+      "joined": "Bergabung",
+      "current_streak": "Streak Saat Ini",
+      "unit_days": "hari",
+      "title_test_started": "Tes Dimulai",
+      "title_test_completed": "Tes Selesai",
+      "title_time_typing": "Total Waktu Mengetik",
+      "title_leaderboard": "Papan Peringkat Bahasa Inggris",
+      "unit_seconds": "detik",
+      "unit_time": "waktu",
+      "unit_words": "kata",
+      "top": "teratas",
+      "days_ago": "hari yang lalu",
+      "xp_until_next_level": "XP ke Level Berikutnya",
+      "total_xp": "Total XP"
+    }
+  },
+  "ChatRoomPage": {
+    "title": "Ruang Obrolan",
+    "description": "Jangan ragu untuk berbagi pemikiran, saran, pertanyaan, atau apa pun!",
+    "placeholder": "Ketik pesan Anda...",
+    "error": "Terjadi kesalahan pada server.",
+    "no_data": "Belum ada pesan.",
+    "sign_in": {
+      "title": "Silakan masuk untuk bergabung dalam percakapan. Jangan khawatir, data Anda aman bersama kami.",
+      "label": "Masuk dengan",
+      "signed_label": "Masuk sebagai",
+      "sign_out_label": "Keluar"
+    },
+    "widget": {
+      "title": "Ruang Obrolan",
+      "tooltip_title": "Buka Ruang Obrolan",
+      "tooltip_minimize": "Minimalkan",
+      "tooltip_signout": "Keluar"
+    }
+  },
+  "ContactPage": {
+    "title": "Kontak",
+    "description": "Hubungi saya untuk peluang software engineering dan kolaborasi.",
+    "intro": "Saya berdomisili di Surabaya, Indonesia. Untuk peluang kerja, diskusi proyek, atau pertanyaan tentang kontribusi saya, hubungi melalui email atau LinkedIn. Repositori publik saya tersedia di GitHub.",
+    "error": "Gagal mengirim pesan.",
+    "no_data": "Informasi kontak tidak tersedia.",
+    "social_media": {
+      "title": "Hubungi saya",
+      "gmail": {
+        "title": "Tetap Terhubung",
+        "description": "Kirim pertanyaan pekerjaan, ide kolaborasi, atau pertanyaan proyek langsung ke email saya.",
+        "action": "Kirim email"
+      },
+      "instagram": {
+        "title": "Ikuti Perjalanan Saya",
+        "description": "Ikuti perjalanan kreatif saya."
+      },
+      "linkedin": {
+        "title": "Mari Terhubung",
+        "description": "Terhubung dengan Muhammad Nandha Chrismawan untuk percakapan profesional.",
+        "action": "Buka LinkedIn"
+      },
+      "tiktok": {
+        "title": "Bergabung dalam Keseruan",
+        "description": "Tonton konten yang menarik dan menyenangkan."
+      },
+      "github": {
+        "title": "Jelajahi Kode",
+        "description": "Lihat repositori publik dan kode saya. Sebagian proyek portfolio tidak memiliki tautan repositori publik.",
+        "action": "Buka GitHub"
+      }
+    },
+    "form": {
+      "title": "Atau kirimkan saya pesan",
+      "input_name": "Nama",
+      "input_email": "Email",
+      "input_message": "Pesan",
+      "button": "Kirim Email"
+    }
+  },
+  "SmartTalkPage": {
+    "title": "Smart Talk",
+    "description": "Ruang bertenaga AI untuk percakapan alami yang mendalam dan eksplorasi ide.",
+    "error": "AI saat ini tidak tersedia.",
+    "no_data": "Belum ada riwayat percakapan."
+  },
+  "Footer": {
+    "hire": "Rekrut saya.",
+    "copyright_1": "HAK CIPTA © ",
+    "copyright_2": "Muhammad Nandha Chrismawan. Seluruh hak cipta dilindungi undang-undang."
+  },
+  "Profile": {
+    "description": "Muhammad Nandha Chrismawan — Software Engineer yang berdomisili di Surabaya, Indonesia. Jelajahi profil, proyek, dan pencapaian saya.",
+    "email": "Email",
+    "contact_links": "Tautan kontak",
+    "open_menu": "Buka navigasi",
+    "close_menu": "Tutup navigasi"
+  },
+  "LocaleSwitcher": {
+    "en": "🇺🇸",
+    "id": "🇮🇩",
+    "label": "Bahasa"
+  },
+  "Navigation": {
+    "Home": "Beranda",
+    "About": "Tentang",
+    "Contents": "Konten",
+    "Achievements": "Pencapaian",
+    "Projects": "Proyek",
+    "Dashboard": "Dasbor",
+    "Chat Room": "Ruang Obrolan",
+    "Contact": "Kontak",
+    "Smart Talk": "Smart Talk"
+  },
+  "NotFoundPage": {
+    "title": "Halaman tidak ditemukan",
+    "button": "Kembali ke Beranda"
+  }
+}
