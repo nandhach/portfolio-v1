@@ -28,7 +28,10 @@ const IntlToggle = () => {
     if (nextLocale === currentLocale || isPending) return;
 
     startTransition(() => {
-      router.replace(pathname, { locale: nextLocale });
+      router.replace(
+        `${pathname}${window.location.search}${window.location.hash}`,
+        { locale: nextLocale },
+      );
     });
   };
 
@@ -60,6 +63,12 @@ const IntlToggle = () => {
             whileHover={{ scale: isPending ? 1 : 1.15 }}
             whileTap={{ scale: isPending ? 1 : 0.9 }}
             disabled={isPending}
+            aria-label={
+              locale.value === "en"
+                ? "Switch to English"
+                : "Ganti ke Bahasa Indonesia"
+            }
+            aria-pressed={currentLocale === locale.value}
           >
             <motion.div
               className="flex flex-col items-center justify-center text-xs font-medium"
@@ -80,6 +89,11 @@ const IntlToggle = () => {
           handleLocaleChange(locales[(currentIndex + 1) % locales.length].value)
         }
         disabled={isPending}
+        aria-label={
+          currentLocale === "en"
+            ? "Ganti ke Bahasa Indonesia"
+            : "Switch to English"
+        }
       >
         <motion.div
           transition={{ duration: 0.3, ease: "easeInOut" }}

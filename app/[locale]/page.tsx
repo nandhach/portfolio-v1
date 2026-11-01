@@ -1,9 +1,9 @@
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import Container from "@/common/components/elements/Container";
 import Home from "@/modules/home";
-import { METADATA } from "@/common/constants/metadata";
+import { METADATA, getPageUrl } from "@/common/constants/metadata";
 
 interface HomePageProps {
   params: { locale: string };
@@ -18,12 +18,12 @@ export async function generateMetadata({
     title: `${METADATA.creator} | Portfolio`,
     description: t("description"),
     alternates: {
-      canonical: `/${locale}`,
+      canonical: getPageUrl(`/${locale}`),
     },
     openGraph: {
       title: `${METADATA.creator} | Personal Website`,
       description: t("description"),
-      url: `/${locale}`,
+      url: getPageUrl(`/${locale}`),
       siteName: METADATA.openGraph.siteName,
       locale: locale === "id" ? "id_ID" : "en_US",
       type: "website",
@@ -32,6 +32,7 @@ export async function generateMetadata({
 }
 
 const HomePage = async ({ params: { locale } }: HomePageProps) => {
+  setRequestLocale(locale);
   return (
     <Container data-aos="fade-up">
       <Home />

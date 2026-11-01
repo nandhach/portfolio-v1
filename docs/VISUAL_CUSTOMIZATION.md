@@ -107,7 +107,7 @@ Ganti dua properti ini juga jika ingin brand loader ikut berubah.
 ### 2.2 Font
 
 Font Inter didefinisikan `common/styles/fonts.ts` dan diterapkan lewat
-`inter.className` pada body layout locale. Mengganti nama font di satu heading
+`inter.className` pada body root `app/layout.tsx`. Mengganti nama font di satu heading
 tidak mengganti body. Periksa juga `font-sans` pada renderer Markdown.
 Gunakan font yang tersedia melalui konfigurasi Next/font; penambahan font eksternal
 dapat membutuhkan jaringan saat build. Tidak ada dependency font baru yang
@@ -138,7 +138,7 @@ File `common/components/elements/Container.tsx`: `mt-20 p-8 lg:mt-0`.
 `mt-20` menyediakan offset header fixed mobile; jangan hapus tanpa menyesuaikan
 tinggi header. Untuk isi lebih lega pada telepon: ganti `p-8` menjadi
 `px-5 py-8 sm:p-8`. Perubahan shared Container memengaruhi banyak halaman,
-termasuk route lama.
+termasuk komponen arsip bila kelak dipulihkan.
 
 ### 2.4 Heading dan pembatas section
 
@@ -379,9 +379,9 @@ form filter.
 - Tiga kolom pada main yang maksimum 854px dapat membuat judul/tag terlalu sempit;
   uji sebelum memakai `lg:grid-cols-3`.
 - Form filter: `md:grid-cols-3`, input `p-2 text-sm rounded-lg`.
-- Tombol apply: `px-4 py-2`, reset link terpisah.
-- Jangan ganti GET form menjadi kontrol state setengah jalan: query/filter server
-  dan nilai `defaultValue` perlu tetap konsisten.
+- Tombol apply: `px-4 py-2`, tombol reset terpisah bergaya underline.
+- Form dikontrol state `draft`; Apply meneruskan filter ke `Achievements.tsx`.
+  Pertahankan sinkronisasi state/query, reset, dan Back/Forward saat mengubah UI.
 
 ### 8.2 Anatomi card
 

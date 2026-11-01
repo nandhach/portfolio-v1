@@ -4,17 +4,27 @@ import BackButton from "@/common/components/elements/BackButton";
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 import ProjectDetail from "@/modules/projects/components/ProjectDetail";
-import { METADATA } from "@/common/constants/metadata";
+import { METADATA, SITE_URL, getPageUrl } from "@/common/constants/metadata";
+import { projects } from "@/contents/projects";
 import { loadProjectContent } from "@/common/libs/mdx";
 import { getProjectsDataBySlug } from "@/services/projects";
 import { notFound } from "next/navigation";
 import { cache } from "react";
+import { setRequestLocale } from "next-intl/server";
 
 interface ProjectDetailPageProps {
   params: {
     slug: string;
     locale: string;
   };
+}
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return projects
+    .filter((project) => project.is_show)
+    .map(({ slug }) => ({ slug }));
 }
 
 const getProjectDetail = cache(async (slug: string, locale: string) => {
@@ -33,8 +43,14 @@ export const generateMetadata = async ({
     title: `${project.title} ${METADATA.exTitle}`,
     description: project.description,
     openGraph: {
-      ...(project.image ? { images: project.image } : {}),
-      url: `/${locale}/projects/${project.slug}`,
+      ...(project.image
+        ? {
+            images: project.image.startsWith("/")
+              ? `${SITE_URL}${project.image}`
+              : project.image,
+          }
+        : {}),
+      url: getPageUrl(`/${locale}/projects/${project.slug}`),
       siteName: METADATA.openGraph.siteName,
       locale: locale === "id" ? "id_ID" : "en_US",
       type: "article",
@@ -42,12 +58,13 @@ export const generateMetadata = async ({
     },
     keywords: project.title,
     alternates: {
-      canonical: `/${locale}/projects/${params.slug}`,
+      canonical: getPageUrl(`/${locale}/projects/${params.slug}`),
     },
   };
 };
 
 const ProjectDetailPage = async ({ params }: ProjectDetailPageProps) => {
+  setRequestLocale(params.locale);
   const data = await getProjectDetail(params.slug, params.locale);
 
   return (

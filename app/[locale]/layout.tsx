@@ -7,18 +7,20 @@ import {
 } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import "../globals.css";
 
 import Layouts from "@/common/components/layouts";
 import ThemeProviderContext from "@/common/stores/theme";
-import { METADATA, SITE_URL } from "@/common/constants/metadata";
-import { inter } from "@/common/styles/fonts";
+import { METADATA, SITE_URL, getPageUrl } from "@/common/constants/metadata";
+import { withBasePath } from "@/common/libs/site";
+import DocumentLanguage from "@/common/components/elements/DocumentLanguage";
 import SkeletonThemeProvider from "@/SkeletonThemeProvider";
 import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
+
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params: { locale },
@@ -31,11 +33,15 @@ export async function generateMetadata({
     keywords: METADATA.keyword,
     creator: METADATA.creator,
     authors: METADATA.authors,
-    icons: { icon: "/icon.svg", shortcut: "/icon.svg", apple: "/icon.svg" },
+    icons: {
+      icon: withBasePath("/icon.svg"),
+      shortcut: withBasePath("/icon.svg"),
+      apple: withBasePath("/icon.svg"),
+    },
     openGraph: {
       title: `${METADATA.creator} | Software Developer`,
       description: t("description"),
-      url: `/${locale}`,
+      url: getPageUrl(`/${locale}`),
       siteName: METADATA.openGraph.siteName,
       locale: locale === "id" ? "id_ID" : "en_US",
       type: "website",
@@ -58,31 +64,30 @@ const RootLayout = async ({
 
   setRequestLocale(locale);
 
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
 
   return (
-    <html lang={locale} suppressHydrationWarning={true}>
-      <body className={inter.className}>
-        <NextTopLoader
-          color="#fbe400"
-          initialPosition={0.08}
-          crawlSpeed={200}
-          height={3}
-          crawl={true}
-          showSpinner={false}
-          easing="ease"
-          speed={200}
-          shadow="0 0 10px #fbe400,0 0 5px #ffffb8"
-        />
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          <ThemeProviderContext>
-            <SkeletonThemeProvider>
-              <Layouts>{children}</Layouts>
-            </SkeletonThemeProvider>
-          </ThemeProviderContext>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <>
+      <DocumentLanguage locale={locale} />
+      <NextTopLoader
+        color="#fbe400"
+        initialPosition={0.08}
+        crawlSpeed={200}
+        height={3}
+        crawl={true}
+        showSpinner={false}
+        easing="ease"
+        speed={200}
+        shadow="0 0 10px #fbe400,0 0 5px #ffffb8"
+      />
+      <NextIntlClientProvider messages={messages} locale={locale}>
+        <ThemeProviderContext>
+          <SkeletonThemeProvider>
+            <Layouts>{children}</Layouts>
+          </SkeletonThemeProvider>
+        </ThemeProviderContext>
+      </NextIntlClientProvider>
+    </>
   );
 };
 

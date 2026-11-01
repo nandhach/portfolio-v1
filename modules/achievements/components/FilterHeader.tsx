@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { AchievementFilters } from "@/common/libs/content";
+import { withBasePath } from "@/common/libs/site";
 
 interface FilterHeaderProps {
   categoryOptions: string[];
@@ -7,6 +9,7 @@ interface FilterHeaderProps {
   filters: AchievementFilters;
   locale: string;
   totalData: number;
+  onApply: (filters: AchievementFilters) => void;
 }
 
 const FilterHeader = ({
@@ -15,15 +18,22 @@ const FilterHeader = ({
   filters,
   locale,
   totalData,
+  onApply,
 }: FilterHeaderProps) => {
   const t = useTranslations("AchievementsPage");
+  const [draft, setDraft] = useState(filters);
+  useEffect(() => setDraft(filters), [filters]);
   const inputClass =
     "w-full rounded-lg border border-neutral-300 bg-neutral-50 p-2 text-sm text-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100";
   return (
     <div className="space-y-4">
       <form
-        action={`/${locale}/achievements`}
+        action={withBasePath(`/${locale}/achievements/`)}
         method="get"
+        onSubmit={(event) => {
+          event.preventDefault();
+          onApply(draft);
+        }}
         className="flex flex-col items-end gap-3"
       >
         <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-3">
@@ -33,7 +43,10 @@ const FilterHeader = ({
               className={inputClass}
               type="search"
               name="search"
-              defaultValue={filters.search}
+              value={draft.search || ""}
+              onChange={(event) =>
+                setDraft({ ...draft, search: event.target.value })
+              }
             />
           </label>
           <label className="space-y-1 text-sm">
@@ -41,7 +54,10 @@ const FilterHeader = ({
             <select
               className={inputClass}
               name="type"
-              defaultValue={filters.type || ""}
+              value={draft.type || ""}
+              onChange={(event) =>
+                setDraft({ ...draft, type: event.target.value })
+              }
             >
               <option value="">{t("all_types")}</option>
               {filters.type && !typeOptions.includes(filters.type) && (
@@ -59,7 +75,10 @@ const FilterHeader = ({
             <select
               className={inputClass}
               name="category"
-              defaultValue={filters.category || ""}
+              value={draft.category || ""}
+              onChange={(event) =>
+                setDraft({ ...draft, category: event.target.value })
+              }
             >
               <option value="">{t("all_categories")}</option>
               {filters.category &&
@@ -79,12 +98,13 @@ const FilterHeader = ({
           </label>
         </div>
         <div className="flex items-center gap-4 text-sm">
-          <a
-            href={`/${locale}/achievements`}
+          <button
+            type="button"
+            onClick={() => onApply({})}
             className="underline underline-offset-4"
           >
             {t("reset")}
-          </a>
+          </button>
           <button
             type="submit"
             className="rounded-lg bg-neutral-200 px-4 py-2 font-medium dark:bg-neutral-800"

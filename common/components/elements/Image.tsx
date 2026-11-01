@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import NextImage, { ImageProps as NextImageProps } from "next/image";
 import { useState } from "react";
+import { withBasePath } from "@/common/libs/site";
 
 interface ImageProps extends NextImageProps {
   rounded?: string;
@@ -29,7 +30,7 @@ const Image = (props: ImageProps) => {
           rounded,
           className,
         )}
-        src={src}
+        src={typeof src === "string" ? withBasePath(src) : src}
         alt={alt}
         loading="lazy"
         quality={75}

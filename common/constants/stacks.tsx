@@ -39,6 +39,13 @@ import {
   SiShadcnui,
   SiAxios,
   SiWebpack,
+  SiLeaflet,
+  SiVitest,
+  SiSocketdotio,
+  SiClerk,
+
+
+
 } from "react-icons/si";
 import { RiShieldKeyholeFill } from "react-icons/ri";
 
@@ -58,6 +65,36 @@ export const STACKS: SkillProps = {
     icon: <SiWebpack size={iconSize} />,
     background: "bg-sky-500",
     color: "text-sky-500",
+  },
+  ReactRouter: {
+    icon: <SiReactrouter size={iconSize} />,
+    background: "bg-red-500",
+    color: "text-red-500",
+  },
+  ReactHookForm: {
+    icon: <SiReacthookform size={iconSize} />,
+    background: "bg-pink-500",
+    color: "text-pink-500",
+  },
+  Leaflet: {
+    icon: <SiLeaflet size={iconSize} />,
+    background: "bg-green-600",
+    color: "text-green-600",
+  },
+  Vitest: {
+    icon: <SiVitest size={iconSize} />,
+    background: "bg-violet-600",
+    color: "text-violet-600",
+  },
+  SocketIO: {
+    icon: <SiSocketdotio size={iconSize} />,
+    background: "bg-sky-500",
+    color: "text-sky-500",
+  },
+  Clerk: {
+    icon: <SiClerk size={iconSize} />,
+    background: "bg-blue-500",
+    color: "text-blue-500",
   },
   HTML: {
     icon: <SiHtml5 size={iconSize} />,

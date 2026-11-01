@@ -65,7 +65,7 @@ export const projects: LocalProject[] = [
       "Vite",
       "TanStack",
       "Axios",
-      "Socket.IO",
+      "SocketIO",
       "Leaflet",
     ],
     translations: {

@@ -46,12 +46,13 @@ claim of proficiency in every technology.
 - ESLint and Prettier for source consistency.
 
 Core content does not require a database or CMS. Projects and achievements are
-read through local services, also used by their API endpoints. Project detail
-Markdown is loaded by locale and stable slug.
+read through local services at build time. Project detail Markdown is loaded by
+locale and stable slug. The portfolio exports static HTML/CSS/JS to `out/` for
+GitHub Pages; achievement filters run in the browser, preserving query URLs.
 
 ```text
 app/[locale]/           Pages, page metadata, shared locale layout
-app/api/                API routes
+app/_legacy/            Archived route/API entrypoints; excluded from routing
 common/constants/       Profile, skills, experience, education, navigation
 common/components/      Shared layout and UI elements
 common/types/           Content contracts
@@ -61,6 +62,8 @@ modules/                Feature components
 services/               Local content services and retained integrations
 public/images/          Avatar, neutral covers, logos, certificates
 docs/                   Editing, visual, asset, and setup guides
+scripts/                Static export finalization and artifact checks
+.github/workflows/      Manually triggered GitHub Pages deployment
 ```
 
 ## Local development
@@ -95,6 +98,7 @@ uses source checks and builds; it does not launch a local server or browser.
 npm run lint
 npx --no-install tsc --noEmit
 npm run build
+npm run check:export
 git diff --check
 ```
 
@@ -114,6 +118,8 @@ The following guides are written in Indonesian for day-to-day maintenance:
   certificates, optional PDFs, filename encoding.
 - [Setup & troubleshooting](docs/SETUP.md) — environment variables, commands,
   diagnostics, manual verification.
+- [GitHub Pages deployment](docs/GITHUB_PAGES.md) — static export, workflow,
+  project base path, deployment steps, release checks.
 
 Start with `common/constants/profile.ts` for identity and skills,
 `contents/projects.ts` for project cards, `contents/achievements.ts` for
@@ -121,12 +127,33 @@ achievements, and `messages/{en,id}.json` for translated copy.
 
 ## Retained integrations
 
-Contents, Dashboard, Chat, and Smart Talk are hidden from the primary navigation.
-Their routes, modules, APIs, and dependencies remain in the codebase. Hiding a
-menu item does not disable its URL. Some retained features require their own
-credentials and still contain inherited configuration; they are not prerequisites
-for editing the five main portfolio pages. Contact currently uses direct links,
-not the retained email form endpoint.
+Contents, Dashboard, Chat, Smart Talk, template legal pages, all API handlers,
+and the former middleware are archived in the private `app/_legacy/` folder.
+These URLs are unavailable. Modules and dependencies remain as source references;
+no integration credentials are required for the static site. Contact uses direct
+links. Restoring server features requires a server-capable host and a separate
+integration review.
+
+## GitHub Pages
+
+Prepared target: **https://nandhach.github.io/portfolio-v1/**. Deployment has not
+been executed as part of repository preparation.
+
+1. Push the reviewed changes to the default branch when ready.
+2. In repository **Settings → Pages**, choose **GitHub Actions** as the source.
+3. In **Actions → Deploy portfolio to GitHub Pages → Run workflow**, select the
+   default branch and run it manually.
+4. Open the deployment URL after the build and deploy jobs succeed.
+
+The workflow derives the origin and base path from GitHub Pages, installs with
+`npm ci`, checks the code and exported URLs, then uploads only `out/`. No custom
+deployment token or integration secrets are needed. Pushes alone do not deploy.
+Static export does not support `next start`; use `npm run dev` for local editing.
+For a lightweight preview, build with `DOMAIN=http://localhost:3000` and an empty
+`NEXT_PUBLIC_BASE_PATH`, then run `npm run preview` at http://localhost:3000/en/.
+Preview serves existing `out/` files; source changes require a rebuild.
+See [deployment instructions](docs/GITHUB_PAGES.md) for build commands, custom
+domains, troubleshooting, and the manual release checklist.
 
 ## Credits and reuse
 

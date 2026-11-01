@@ -464,13 +464,15 @@ tag research/software-development. Label manusia berasal dari
 - Mengganti locale berarti mencari pada copy locale itu; kata Inggris mungkin
   tidak cocok dengan deskripsi Indonesia.
 - Urutan tanggal menurun, lalu slug. Bukan urutan array input.
-- GET form menggunakan tombol Apply/Terapkan; reset membersihkan query.
+- Form menggunakan tombol Apply/Terapkan; state browser menjalankan filter,
+  `history.pushState` menyimpan query. Reset membersihkan query; popstate mendukung
+  Back/Forward. Tanpa JavaScript, semua entri tetap tampil tanpa filter interaktif.
 - Filter tidak dikenal ditangani sebagai pilihan tidak dikenal/hasil kosong.
 
 Contoh URL manual: `/en/achievements?category=research`,
 `/id/achievements?type=certification&category=language`.
-API: `/api/achievements?locale=id&category=research`. API kategori mengembalikan
-key, bukan label terjemahan. Schema respons memakai `categories`, bukan `category`.
+Pada Pages tambahkan prefix `/portfolio-v1/`. API lama diarsipkan di
+`app/_legacy/api/achievements/`, tidak tersedia sebagai endpoint hosting.
 
 ### 8.5 Mengubah tampilan sertifikat
 
@@ -503,10 +505,14 @@ Jangan mengaktifkan menu lama hanya untuk menghapus pesan build integrasinya.
 
 ### Locale dan tema
 
-`i18n/routing.ts`: en/id, default en, prefix selalu aktif. `middleware.ts` menangani
-routing. `common/stores/theme.tsx` dan `ThemeToggle.tsx` menangani theme melalui
+`i18n/routing.ts`: en/id, default en, prefix selalu aktif. Locale dan slug
+diprerender; `app/page.tsx` menyediakan halaman masuk English tanpa middleware.
+Middleware lama diarsipkan di `app/_legacy/`. `common/stores/theme.tsx` dan
+`ThemeToggle.tsx` menangani theme melalui
 `next-themes`; Tailwind memakai dark class. Mengubah default locale adalah edit
 routing, bukan konten, dan memerlukan pemeriksaan metadata/navigasi lebih luas.
+Static export juga memerlukan penyesuaian finalizer/checker pada `scripts/` bila
+daftar locale berubah. Untuk base path/domain, lihat [GitHub Pages](GITHUB_PAGES.md).
 
 ## 10. Resep perubahan dan pemeriksaan
 

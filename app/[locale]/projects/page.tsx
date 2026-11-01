@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 import Projects from "@/modules/projects";
-import { METADATA } from "@/common/constants/metadata";
+import { METADATA, getPageUrl } from "@/common/constants/metadata";
 import { getProjectsData } from "@/services/projects";
 
 interface ProjectsPageProps {
@@ -19,14 +19,15 @@ export async function generateMetadata({
   return {
     title: `${t("title")} ${METADATA.exTitle}`,
     description: t("description"),
-    keywords: "portfolio frontend developer, software engineer jambi",
+    keywords: `software developer projects, frontend portfolio, ${METADATA.creator}`,
     alternates: {
-      canonical: `/${locale}/projects`,
+      canonical: getPageUrl(`/${locale}/projects`),
     },
   };
 }
 
 const ProjectsPage = async ({ params: { locale } }: ProjectsPageProps) => {
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "ProjectsPage" });
 
   return (

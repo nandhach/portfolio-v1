@@ -31,14 +31,19 @@ benar-benar Anda gunakan. Contoh aktif hanya:
 
 ```dotenv
 DOMAIN=http://localhost:3000
+NEXT_PUBLIC_BASE_PATH=
 ```
 
-`DOMAIN` dibaca server untuk metadata. Nilai hilang/tidak valid memakai fallback
-localhost. Produksi perlu origin HTTPS nyata yang dikonfirmasi. Jangan memakai
-domain contoh sebagai canonical publik. Mengubah environment memerlukan proses
-atau build baru.
+`DOMAIN` dibaca saat build untuk metadata. Nilai hilang/tidak valid memakai fallback
+localhost. `NEXT_PUBLIC_BASE_PATH` kosong untuk root lokal, `/portfolio-v1` untuk
+project Pages saat ini. Workflow membaca keduanya dari metadata GitHub Pages.
+Mengubah environment memerlukan build baru. Petunjuk publikasi lengkap:
+[GitHub Pages](GITHUB_PAGES.md).
 
-### Integrasi opsional yang dipertahankan
+### Integrasi arsip yang dipertahankan
+
+Sejak tahap 6, entrypoint berada di `app/_legacy/`, tidak dirutekan/diekspor.
+Variabel di bawah hanya referensi source; **tidak diperlukan pada Pages**.
 
 | Area                | Variabel source                                                                                                                                                                                                                                                                               | Catatan                                                  |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
@@ -69,11 +74,35 @@ Setelah dependency tersedia, pemilik dapat menjalankan:
 npm run dev
 ```
 
+Konfigurasi export hanya aktif pada build produksi; preview development memakai
+mode Next.js biasa. Jika error `missing exported function "generateStaticParams()"`
+masih tampil setelah pembaruan konfigurasi, hentikan proses lama dengan Ctrl+C,
+lalu jalankan ulang `npm run dev`.
+
 Buka `http://localhost:3000/en` dan `/id`. Hentikan terminal dengan Ctrl+C setelah
-selesai. Untuk memeriksa output produksi, pemilik menjalankan `npm run build`,
-kemudian `npm run start`. Jangan menjalankan dua server pada port sama. Penggunaan
+selesai. Output produksi dibuat dengan `npm run build`, diperiksa memakai
+`npm run check:export`, lalu dipublikasikan sebagai file statis. Script `start`
+dihapus karena `next start` tidak mendukung export. Penggunaan
 port alternatif, contoh `npm run dev -- --port 3001`, juga mengharuskan URL manual
 yang sesuai; metadata DOMAIN tidak otomatis mengikuti port baru.
+
+### Preview ringan hasil build
+
+`serve` tersedia sebagai dev dependency. Build sekali untuk URL root lokal:
+
+```powershell
+$env:NEXT_PUBLIC_BASE_PATH = ""
+$env:DOMAIN = "http://localhost:3000"
+npm run build
+npm run preview
+```
+
+Buka `http://localhost:3000/en/` atau `/id/`. Preview memakai port 3000 pada
+loopback; hentikan server development sebelumnya agar port tidak bentrok.
+Sesudah perubahan source, build ulang. Jika `out/` sudah merupakan build lokal
+terbaru, cukup `npm run preview`. Jangan memakai build berprefix `/portfolio-v1`
+untuk command preview root ini. Tidak memakai fallback SPA agar URL tak dikenal
+tetap menghasilkan 404.
 
 Command preview di panduan tidak memberikan izin agent untuk menjalankan server.
 Instruksi repository melarang validasi browser otomatis dan server lokal agent.
@@ -86,13 +115,16 @@ Jalankan di root repo, satu perintah per langkah:
 npm run lint
 npx --no-install tsc --noEmit
 npm run build
+npm run check:export
 git diff --check
 ```
 
 - Lint: aturan ESLint aplikasi.
 - TypeScript: kontrak dan penggunaan tipe, tanpa emit source JavaScript.
-- Build: compile, lint/tipe Next.js, generate halaman, trace bundle; tetap dapat
-  menyentuh integrasi lama saat prerender meski menu tidak aktif.
+- Build: compile, lint/tipe Next.js, generate halaman statis, finalisasi bahasa HTML.
+  Integrasi arsip tidak dijalankan oleh routing aktif.
+- Export check: URL/file output, canonical, locale, halaman masuk/404, tanpa API.
+  Gunakan environment yang sama dengan build.
 - Diff check: whitespace; bukan pemeriksaan desain/isi personal.
 - Tidak ada `npm test`; jangan mengklaim test suite lulus.
 
@@ -157,8 +189,8 @@ untuk memeriksa not found, bukan proyek yang harus ditambahkan.
 - **Browserslist/caniuse-lite outdated:** peringatan basis data browser; bukan
   kegagalan konten. Pembaruan dependency adalah pekerjaan tersendiri, jangan
   regenerate lockfile hanya untuk menghilangkan pesan saat edit copy.
-- **WakaTime HTTP 401:** integrasi statistik lama tidak terkonfigurasi/otorisasi
-  ditolak. Build sebelumnya tetap selesai. Laporkan terpisah dari regresi source.
+- **WakaTime HTTP 401:** pesan build sebelum pengarsipan tahap 6; integrasi lama
+  tidak lagi dijalankan pada build statis aktif.
 - **Chat `NEXTAUTH_SECRET` / `NO_SECRET`:** masalah konfigurasi auth lama;
   bukan kebutuhan Projects/Achievements lokal. Jangan menaruh credential palsu.
 - **Gambar legacy yang dihapus:** referensi masih ada pada komponen Dashboard/
@@ -170,12 +202,12 @@ integrasi lama tanpa kebutuhan yang disepakati.
 
 ## 7. Batas pengelolaan dan publikasi repo
 
-- Lima menu utama tidak berarti route lama dinonaktifkan. Jangan menggunakan
-  penyembunyian menu sebagai mekanisme akses.
+- Route/API lama sudah diarsipkan pada private folder `app/_legacy/`; URL-nya
+  tidak tersedia di output Pages. Menambah menu tidak mengaktifkan source arsip.
 - Konten inti berasal dari file publik lokal, bukan DB. Environment tidak
   menambah kartu proyek atau pencapaian.
 - README memakai identitas pemilik; catatan sumber UI tetap ada pada Credits.
   Lisensi MIT disebut README asal, tetapi checkout belum memiliki file LICENSE;
   jangan menambahkan teks lisensi atas nama pihak lain tanpa sumber yang benar.
-- Validasi tahap 5 adalah pemeriksaan terarah perubahan tahap ini. Pemeriksaan
-  terpadu tahap 6 memerlukan instruksi pemilik terpisah.
+- Tahap 6 mencakup build statis dan pemeriksaan artefak; visual/runtime hosting
+  tetap diverifikasi manual oleh pemilik sesudah deployment.

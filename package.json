@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && node scripts/finalize-static-export.mjs",
+    "preview": "serve out --listen tcp://127.0.0.1:3000 --no-clipboard",
+    "check:export": "node scripts/check-static-export.mjs",
     "lint": "next lint"
   },
   "dependencies": {
@@ -68,6 +69,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
+    "serve": "^14.2.6",
     "tailwindcss": "^3.3.0",
     "typescript": "5.7.2"
   }

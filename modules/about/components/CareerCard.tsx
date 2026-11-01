@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { withBasePath } from "@/common/libs/site";
 import { useId, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
@@ -105,7 +106,7 @@ const CareerCard = ({
           <Image
             width={60}
             height={60}
-            src={logo}
+            src={withBasePath(logo)}
             alt={company}
             className="h-12 w-12 shrink-0 rounded-lg border-[1.5px] border-neutral-300 bg-white object-contain dark:border-neutral-700 sm:h-[60px] sm:w-[60px]"
           />

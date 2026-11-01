@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/common/libs/site";
 import { useTranslations } from "next-intl";
 import { BsBuildings as CompanyIcon } from "react-icons/bs";
 
@@ -27,7 +28,7 @@ const EducationCard = ({
           <Image
             width={70}
             height={70}
-            src={logo}
+            src={withBasePath(logo)}
             alt={school}
             className="h-12 w-12 shrink-0 rounded-lg bg-white object-contain sm:h-[70px] sm:w-[70px]"
           />
