@@ -31,8 +31,6 @@ jobs:
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
-        with:
-          static_site_generator: next
           
       - name: Install locked dependencies
         run: bun install --frozen-lockfile
