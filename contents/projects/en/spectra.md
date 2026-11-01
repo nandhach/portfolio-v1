@@ -1,25 +1,41 @@
-## Context and role
+# Spectra
 
-Spectra is a freelance computer-based assessment platform for an accounting competition. It provides participant exams and administrator workflows for questions, progress monitoring, and scores.
+> **A digital examination platform for accounting competitions—bringing a structured testing experience together with streamlined progress monitoring and results management.**
 
-I was the sole frontend developer in a two-person team, responsible for all frontend UI and frontend-side logic. My teammate implemented the backend and server-side logic, including scoring and persistence. The platform was used for Spectra 2025 and Spectra 2026; those are event editions, not an assumed contract start/end period.
+**Freelance project** · **Frontend Developer** · **Spectra 2025 & 2026**
 
-## Participant assessment experience
+`Next.js` · `React` · `TypeScript` · `Tailwind CSS` · `Supabase Realtime`
 
-Using Next.js, React, TypeScript, and Tailwind CSS, I built login/registration and participant quiz interfaces. React Context and browser storage preserve answer state and a stable question order within a browser session. User-scoped answers are hydrated after refresh or login so participants can resume their work.
+---
 
-I implemented countdown and manual/deadline submission UX integrated with the server submission flow. Submission and scoring on the server remain outside my implementation scope.
+## 🎯 Project Overview
 
-## Administrator interfaces and integration
+Spectra is a computer-based testing (CBT) platform built for accounting competitions. Participants take their exams through a web interface, while organizers use an administrator dashboard to manage questions, monitor progress, and review assessment results.
 
-I built question-bank, monitoring, scores, and score-card interfaces, plus shared admin/participant UI and event-specific redesigns requested by the client. The monitoring interface supports progress visibility and filtering.
+## 👨‍💻 My Role & Contributions
 
-On the participant side, I handled Supabase Realtime events that connect an administrative intervention to the forced-completion UX. This frontend integration does not imply ownership of the database mutation or backend enforcement.
+As the **sole frontend developer** in a two-person team, I owned the frontend interfaces and client-side logic across both the participant experience and administrator dashboard. My teammate built the backend, including answer submission processing, scoring, and data persistence.
 
-## Results
+## ⚙️ Key Implementations
 
-The deployed platform was accepted by the client and used at two annual events for approximately 100 participants. It helped the committee manage questions and participant scores; system ordering replaced manual score ordering. Maintenance was performed when the client encountered problems.
+### 📝 Participant Exam Experience
 
-## Boundaries and learning
+- **Participant flow:** Built registration, login, and exam-taking interfaces.
+- **Session continuity:** Used React Context and browser storage to preserve answers and consistent question ordering. Answers were scoped by user and restored after a refresh or login in the same browser.
+- **Time-sensitive interactions:** Implemented countdown behavior and the experience for manual and deadline-triggered submission, integrated with the backend submission flow.
 
-This was shared delivery with a clear frontend/backend split. Local integration reports support particular submission and intervention paths, not exhaustive production reliability or personal ownership of test execution. The project reinforced the need to coordinate browser state, timed interactions, and backend contracts without moving grading authority into the client.
+### 🗂️ Administrator Dashboard & Realtime
+
+- **Exam management:** Built interfaces for the question bank, filtered progress monitoring, scores, and participant scorecards.
+- **Shared UI:** Developed reusable interfaces for participants and administrators, with event-specific design adjustments requested by the client.
+- **Realtime integration:** Handled Supabase Realtime events on the participant side to reflect administrator-triggered exam completion. Server-side enforcement and data updates remained the backend's responsibility.
+
+## 📈 Results & Impact
+
+> **2 competition editions · ~100 participants combined**
+
+The platform was deployed, accepted by the client, and used for **Spectra 2025 and Spectra 2026**. The interfaces supported question management, participant monitoring, and access to assessment results. System-based score ordering also replaced manual sorting. I provided frontend maintenance when the client reported issues.
+
+## 💡 Engineering Takeaways
+
+This project strengthened my understanding of **browser-state coordination, time-sensitive exam interactions, and realtime integration**. Working in a small team also highlighted the importance of clear frontend–backend contracts—especially when submission processing and grading authority must remain on the server.

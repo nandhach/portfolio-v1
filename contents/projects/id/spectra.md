@@ -1,25 +1,41 @@
-## Konteks dan peran
+# Spectra
 
-Spectra adalah platform ujian berbasis komputer sebagai proyek freelance untuk kompetisi akuntansi. Platform menyediakan ujian peserta serta alur administrator untuk soal, monitoring progres, dan nilai.
+> **Platform ujian digital untuk kompetisi akuntansi—menghadirkan pengalaman ujian yang terstruktur sekaligus memudahkan panitia memantau progres dan hasil peserta.**
 
-Saya menjadi satu-satunya frontend developer dalam tim dua orang, bertanggung jawab atas seluruh UI dan logika sisi frontend. Rekan tim mengimplementasikan backend dan logika server, termasuk scoring serta penyimpanan data. Platform digunakan pada Spectra 2025 dan Spectra 2026; keduanya adalah edisi event, bukan asumsi periode mulai/akhir kontrak.
+**Proyek freelance** · **Frontend Developer** · **Spectra 2025 & 2026**
 
-## Pengalaman ujian peserta
+`Next.js` · `React` · `TypeScript` · `Tailwind CSS` · `Supabase Realtime`
 
-Dengan Next.js, React, TypeScript, dan Tailwind CSS, saya membangun antarmuka login/registrasi serta ujian peserta. React Context dan penyimpanan browser mempertahankan state jawaban serta urutan soal yang stabil dalam satu sesi browser. Jawaban yang dipisahkan per pengguna dihidrasi setelah refresh atau login agar peserta dapat melanjutkan pengerjaan.
+---
 
-Saya mengimplementasikan UX hitung mundur serta pengiriman manual/saat batas waktu yang terintegrasi dengan alur pengiriman server. Pengiriman dan scoring di server tetap berada di luar lingkup implementasi saya.
+## 🎯 Tentang Proyek
 
-## Antarmuka administrator dan integrasi
+Spectra adalah platform _computer-based test_ (CBT) yang dikembangkan untuk penyelenggaraan kompetisi akuntansi. Peserta dapat mengikuti ujian melalui web, sementara panitia menggunakan antarmuka administrator untuk mengelola soal, memantau pengerjaan, dan melihat hasil penilaian.
 
-Saya membangun antarmuka bank soal, monitoring, nilai, dan kartu nilai, beserta UI bersama admin/peserta serta penyesuaian desain tiap event atas permintaan klien. Antarmuka monitoring menyediakan visibilitas progres dan filter.
+## 👨‍💻 Peran & Kontribusi
 
-Di sisi peserta, saya menangani event Supabase Realtime yang menghubungkan intervensi administrator dengan UX penyelesaian paksa. Integrasi frontend ini tidak berarti kepemilikan mutasi database atau penegakan aturan backend.
+Saya menjadi **satu-satunya frontend developer** dalam tim beranggotakan dua orang. Saya bertanggung jawab atas seluruh antarmuka dan logika di sisi frontend, mulai dari pengalaman peserta hingga dashboard administrator. Rekan saya mengembangkan backend, termasuk pemrosesan pengiriman jawaban, penilaian, dan penyimpanan data.
 
-## Hasil
+## ⚙️ Implementasi Utama
 
-Platform yang di-deploy diterima klien dan digunakan pada dua event tahunan untuk sekitar 100 peserta. Platform membantu panitia mengelola soal serta nilai peserta; pengurutan sistem menggantikan pengurutan nilai manual. Pemeliharaan dilakukan saat klien mengalami masalah.
+### 📝 Pengalaman Ujian Peserta
 
-## Batas dan pembelajaran
+- **Alur peserta:** Membangun antarmuka registrasi, login, dan halaman pengerjaan ujian.
+- **Kontinuitas sesi:** Menggunakan React Context dan penyimpanan browser untuk mempertahankan jawaban serta urutan soal yang konsisten. Jawaban dipisahkan berdasarkan pengguna dan dipulihkan setelah _refresh_ atau login pada browser yang sama.
+- **Interaksi berbatas waktu:** Mengimplementasikan hitung mundur serta pengalaman pengiriman jawaban secara manual maupun saat waktu habis, terintegrasi dengan alur pengiriman di backend.
 
-Pengerjaan dilakukan bersama dengan pembagian frontend/backend yang jelas. Laporan integrasi lokal mendukung alur pengiriman dan intervensi tertentu, bukan reliabilitas produksi menyeluruh atau kepemilikan pribadi atas pelaksanaan pengujian. Proyek ini memperkuat pentingnya koordinasi state browser, interaksi berbatas waktu, dan kontrak backend tanpa memindahkan kewenangan penilaian ke client.
+### 🗂️ Dashboard Administrator & Realtime
+
+- **Pengelolaan ujian:** Membangun antarmuka bank soal, monitoring progres dengan filter, daftar nilai, dan kartu nilai peserta.
+- **UI lintas peran:** Mengembangkan komponen antarmuka bersama untuk peserta dan administrator serta menyesuaikan desain untuk kebutuhan setiap edisi kompetisi.
+- **Integrasi realtime:** Menangani event Supabase Realtime pada sisi peserta untuk menampilkan alur penyelesaian ujian yang dipicu oleh intervensi administrator. Penegakan aturan dan perubahan data tetap ditangani backend.
+
+## 📈 Hasil & Dampak
+
+> **2 edisi kompetisi · ±100 peserta secara total**
+
+Platform berhasil di-deploy, diterima oleh klien, dan digunakan pada **Spectra 2025 dan Spectra 2026**. Antarmuka yang dibangun mendukung panitia dalam pengelolaan soal, pemantauan peserta, serta penyajian hasil penilaian. Pengurutan nilai melalui sistem juga menggantikan proses pengurutan manual. Saya turut menangani pemeliharaan frontend ketika klien melaporkan kendala.
+
+## 💡 Pembelajaran Teknis
+
+Proyek ini memperdalam pemahaman saya tentang **sinkronisasi state browser, interaksi ujian berbatas waktu, dan integrasi realtime**. Pengalaman bekerja dalam tim kecil juga menegaskan pentingnya kontrak frontend–backend yang jelas, khususnya ketika keputusan akhir terkait pengiriman dan penilaian harus tetap berada di server.
