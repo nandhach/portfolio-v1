@@ -1,25 +1,66 @@
-## Context and role
+# Ride-Hailing Admin Dashboard
 
-During my Frontend Developer internship at PT. Piramida Teknologi Informasi, August–December 2025, I worked on a ride-hailing application's administrative web frontend.
+> **A ride-hailing operations dashboard that brings data management, map-based trip visualization, and real-time activity monitoring into a unified web interface.**
 
-The team had four people: two backend/API developers, one mobile-frontend developer, and me as the sole web-frontend developer. I implemented web pages, frontend behavior, and backend data fetching. Backend/API and mobile implementation were separate responsibilities.
+**Internship Project** · **Frontend Web Developer** · **August–December 2025**
 
-## Typed integration and operational workflows
+`TypeScript` · `Axios` · `TanStack Query` · `Zustand` · `Leaflet` · `Socket.IO` · `Zod`
 
-I built TypeScript domain/response models and a shared Axios transport with JWT injection and `401` session cleanup. Endpoint-specific services feed TanStack Query list/detail flows with loading states, pagination, filters, and mutation-driven cache invalidation. Zustand manages client-side state.
+---
 
-I implemented account views and driver forms using React Hook Form and Zod, including Indonesian phone, identity-document, and vehicle-field validation. These are implemented frontend surfaces; they should not all be read as the completed MVP's scope.
+## 🎯 Project Overview
 
-## Ride maps and real-time events
+Ride-Hailing Admin Dashboard is an administrative web application developed during my internship at **PT. Piramida Teknologi Informasi**. The application was designed to support ride-hailing operations, covering user information, trip monitoring, and driver location visualization.
 
-Ride detail interfaces present participants, fare, lifecycle, and route context. Leaflet renders pickup/drop-off and driver locations; road geometry has a straight-line fallback, and map instances are cleaned up through the component lifecycle.
+Development focused on connecting backend services with an informative, interactive interface capable of responding to real-time updates.
 
-I integrated authenticated Socket.IO events into notification state and matching driver-location updates on ride details. REST workflows and Socket.IO location/notification flows ran end-to-end against the separately developed backend during local internal testing.
+## 👨‍💻 My Role & Contributions
 
-## Result and status
+I served as the **sole Frontend Web Developer** in a four-person team, collaborating with two Backend/API Developers and one Mobile Frontend Developer.
 
-The completed MVP was limited to monitoring riders and passenger. It ran locally for internal testing and was never deployed. This does not establish production reliability or delivery of every administrative feature in the repository.
+My responsibilities included building administrative interfaces, managing application state, integrating REST APIs, and implementing interactive maps and real-time communication. Backend services and the mobile application were developed independently by other team members.
 
-## Limitations and learning
+## ⚙️ Key Implementations
 
-Some chart series remain sample data, and notification presentation is limited. Automated runtime coverage is not established. The work emphasized typed API boundaries, explicit loading/error states, and careful mapping between REST data, event payloads, and interface state.
+### 🔗 API Integration & State Management
+
+- **Type-safe API integration:** Defined TypeScript domain and response models to maintain consistent data structures across frontend–backend boundaries.
+- **Authentication & sessions:** Built a centralized Axios configuration with JWT injection and automatic session cleanup on `401` responses.
+- **Server-state management:** Used TanStack Query for data fetching, pagination, filtering, loading states, and cache invalidation after mutations.
+- **Client-state management:** Implemented Zustand to manage local application state independently of server-managed data.
+
+### 📝 Administrative Interfaces & Data Validation
+
+- **Account management:** Developed administrative views for accessing and displaying user account information.
+- **Driver forms:** Built interfaces for driver information, identity documents, and vehicle details.
+- **Structured validation:** Integrated React Hook Form and Zod to validate form inputs, including Indonesian phone numbers and administrative data fields.
+
+### 🗺️ Trip Visualization & Interactive Maps
+
+- **Trip details:** Developed interfaces presenting trip participants, fares, lifecycle status, and route context.
+- **Location mapping:** Used Leaflet to visualize pickup points, destinations, and driver locations on interactive maps.
+- **Route handling:** Implemented straight-line fallbacks when road geometry was unavailable and managed map instance cleanup throughout the component lifecycle.
+
+### ⚡ Real-Time Communication
+
+- **Socket.IO integration:** Established authenticated Socket.IO integration to consume backend events.
+- **Location updates:** Connected driver-location events to their corresponding trip detail views.
+- **Notification synchronization:** Mapped server events into frontend notification state to support updates without manual refreshes.
+
+## 📈 Results & Development Status
+
+> **Rider & Passenger Monitoring MVP · Local Internal Testing**
+
+The completed MVP focused on **rider and passenger monitoring**. REST API workflows and Socket.IO-based location and notification updates were successfully exercised end-to-end with the backend during local internal testing.
+
+Additional administrative interfaces were also implemented on the frontend, although not all were part of the completed MVP scope.
+
+**Project status:** The application ran in a local development environment and was never deployed to production. Some chart visualizations still used sample data, notification presentation remained limited, and comprehensive automated test coverage was not established.
+
+## 💡 Engineering Takeaways
+
+This project strengthened my ability to **design type-safe API integrations, manage server and client state, and coordinate REST workflows with real-time events**.
+
+Implementing trip maps also provided hands-on experience with geospatial data, component lifecycle management, and event-driven location updates.
+
+Working across dedicated web, mobile, and backend responsibilities reinforced the importance of consistent API contracts, explicit loading/error handling, and cross-platform integration.
